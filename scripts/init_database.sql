@@ -1,3 +1,6 @@
+-- Script to create the DataWarehouse database and necessary schemas (bronze, silver, gold)
+-- Ensures the database and schemas are only created if they do not already exist
+
 -- Check if database exists, if not, create it
 IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'DataWarehouse')
 BEGIN
@@ -47,3 +50,4 @@ BEGIN
     PRINT 'Schema gold already exists';
 END
 GO
+
